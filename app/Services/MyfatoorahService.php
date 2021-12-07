@@ -43,4 +43,10 @@ class MyfatoorahService
         $response = json_decode($response->getBody(), true);
         return $response;
     }
+
+    // send the payment
+    public function sendPayment($data)
+    {
+
+    }
 }
