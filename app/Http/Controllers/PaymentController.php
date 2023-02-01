@@ -20,13 +20,15 @@ class PaymentController extends Controller
             "CustomerName" => "karim osama",
             "NotificationOption" => "LNK",
             "CustomerEmail" => "karimosama1041997@gmail.com",
-            "InvoiceValue" => 100,
-            "DisplayCurrencyIso" => "kwd",
+            "InvoiceValue" => 150,
+            // "DisplayCurrencyIso" => "kwd",
+            // 'MobileCountryCode'  => '+966',
+            // 'CustomerMobile'     =>  $phone,
+            // "Language" => "en",
             "CallBackUrl" => route('callback'),
             "ErrorUrl" => route('error'),
-            "Language" => "en",
         ];
 
-        $this->fatoorahService->sendPayment($data);
+     return   $this->fatoorahService->sendPayment($data);
     }
 }

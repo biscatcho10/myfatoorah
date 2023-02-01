@@ -18,7 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('pay', [PaymentController::class, 'payOrder']);
 Route::get('callback', function () {
     return "success";
 })->name('callback');

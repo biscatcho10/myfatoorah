@@ -15,8 +15,8 @@ class MyfatoorahService
     public function __construct(Client $request_client)
     {
         $this->request_client = $request_client;
-        $this->base_url = config('services.myfatoorah.base_uri');
-        $headers = [
+        $this->base_url = config('services.myfatoorah.base_url');
+        $this->headers = [
             'Content-Type' => 'application/json',
             'authorization' => 'Bearer ' . config('services.myfatoorah.token')
         ];
@@ -25,7 +25,7 @@ class MyfatoorahService
     // make a request
     public function makeRequest($uri, $method, $body = [])
     {
-        $request = new Request($method, $this->base_url . $uri, $this->header);
+        $request = new Request($method, $this->base_url . $uri, $this->headers);
 
         if (!$body) {
             return false;
@@ -47,6 +47,6 @@ class MyfatoorahService
     // send the payment
     public function sendPayment($data)
     {
-
+        return $response = $this->makeRequest('/v2/SendPayment', 'POST', $data);
     }
 }

@@ -15,7 +15,7 @@ return [
     */
 
     'myfatoorah' => [
-        'base_uri' => env('MYFATOORAH_BASE_URL'),
+        'base_url' => env('MYFATOORAH_BASE_URL'),
         'token' => env('MYFATOORAH_APP_KEY'),
     ],
 
